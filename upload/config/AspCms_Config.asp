@@ -35,10 +35,10 @@ Const markPicAlpha =0.5
 Const waterMarkLocation="5"	'位置
 
 '邮件设置 
-Const smtp_usermail="aspcmstest@163.com"	'邮件地址
-Const smtp_user="aspcmstest"	'邮件账号 
+Const smtp_usermail="mail@126.com"	'邮件地址
+Const smtp_user="sky"	'邮件账号 
 Const smtp_password="aspcms.cn"	'邮件密码 
-Const smtp_server="smtp.163.com"	'邮件服务器
+Const smtp_server="smtp.126.com"	'邮件服务器
 
 '提醒功能
 Const messageAlertsEmail="513518064@qq.com"	'邮件地址
@@ -55,8 +55,8 @@ Const dirtyStr="黑车<br>传销"
 '在线客服
 Const serviceStatus=1	'在线客服显示状态
 Const serviceStyle=1	'样式
-Const serviceLocation="left"	'显示位置
-Const serviceQQ="技术支持|506232687 产品咨询|8887443" 'QQ
+Const serviceLocation="right"	'显示位置
+Const serviceQQ="点我询价|513518064 点我询价|8887443" 'QQ
 'Const serviceEmail="234324324"	'邮箱
 'Const servicePhone="43244324324"	'电话
 Const serviceWangWang="销售一号|123456 销售2号|8887443"	'旺旺
