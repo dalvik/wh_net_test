@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>[content:title]-{aspcms:sortname}-{aspcms:sitetitle}- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="[content:keyword]" >
+<meta name="Description" content="[content:desc]" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/public.css" rel="stylesheet" />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/front.css" rel="stylesheet" />
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/jquery1.4.2.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/front.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/productlist_roll.js"></script>
+<!--相册相关文件 -->
+<link href="{aspcms:sitepath}/Css/Album.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="{aspcms:sitepath}/Js/jquery.js" type="text/javascript"></script>
+<script language="JavaScript" src="{aspcms:sitepath}/Js/Select.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var imgurl="{aspcms:sitepath}/Images/Album/";
+	var GroupjsUrl = "{aspcms:sitepath}/Js/Album.js";
+</script>
+<!--相册相关文件 -->
+</head>
+
+<body>
+{aspcms:top}
+
+<div class="wrap list_wrap singel_wrap">
+    {aspcms:template src=left.html}
+	
+	<div class="column_m">
+		    <div class="bt">
+			    <h4>图片列表</h4><span>您现在的位置：<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position} </span>
+			</div>
+			<div class="nr">
+				<div class="nr_bt">
+					<h5>[content:title]</h5>	
+					
+				</div>
+				<div class="nr_text"><!--相册开始 -->
+          <div id="photo-warp" style="background:url({aspcms:sitepath}/Images/Album/ajax-loader.gif) no-repeat center center">
+            <div class="photo-warp-inner" id="photo-warp-inner" style="visibility:hidden;">
+              <div class="mainArea" id="mainArea">
+                <div id="preArrow" title="上一张"></div>
+                <div id="nextArrow" title="下一张"></div>
+                <div id="gotolast"></div>
+                <div id="gotolast_inner">
+                  <p>已经浏览到最后一张，您可以</p>
+                  <a href="javascript:;" id="rePlay">重新欣赏</a><a href="#" target="_blank" id="urlgoto">进入首页</a>
+			    </div>
+                <a href="javascript:void(0);" id="bigHref"><img src="{aspcms:sitepath}/Images/Album/ajax-loader.gif" id="Display" style="cursor:pointer;margin:0 auto;visibility:hidden;" title="点击浏览下一张" onErr="{aspcms:sitepath}/Images/Album/ajax-loader.gif" /></a>
+                <div id="loading" style="display:none"></div>
+                <div class="picTips picTips_png" id="picTips" style="display:none">
+                  <div class="titleArea" id="titleArea"> </div>
+
+                </div>
+                <div href="javascript:void(0);" id="buttonArea"></div>
+                <div style="display:none" id="openTips"></div>
+              </div>
+              <div class="blank"></div>
+              <div class="photoList-wrap"> <a href="javascript:void(0)" class="photo-Up"  id="Up"  onfocus='this.blur()' title="向前"></a>
+                <div class="photo-List" id="photo-List">
+                  <ul id="smallPhoto">
+
+                  </ul>
+                  <div id="noDiv"></div>
+                </div>
+                <a href="javascript:void(0)" class="photo-Down" id="Down"  onfocus='this.blur()' title = "向后"></a> </div>
+              <div id="scrollbar" style=" display:none;"> <a href="javascript:void(0)" id="scrollbar-in" title="拖动工具条以快速查看图片"></a> </div>
+            </div>
+          </div>
+
+          <div id="flashCff"></div>
+          <div id="contTxt"></div>
+          <div id="PGViframe"></div>
+          <script>
+			var isLoadData = false;
+			var photoJson = [[content:pics]];
+			isLoadData = true;
+			</script>
+			<script>
+			function GroupLoadJs(file,callback) {
+				var head = document.getElementsByTagName('head')[0];
+				var js = document.createElement('script');
+				js.setAttribute('type','text/javascript');
+				js.setAttribute('src',file);
+				head.appendChild(js);
+				js.onload = js.onreadystatechange = function() {
+					if (js.readyState && js.readyState != 'loaded' && js.readyState != 'complete') return;
+					js.onreadystatechange = js.onload = null;
+					if (callback) callback();
+				}
+				return false;
+			}
+			GroupLoadJs(GroupjsUrl,function(){
+			  if(isLoadData){
+			  picShow.Picsite="";
+
+			  picShow.lastUrl="#";
+			  picShow.defatLink = "http://{aspcms:siteurl}";
+			  picShow.SiteName = "";
+			  picShow.Loader();
+			  picShow.$("photo-warp-inner").style.visibility = "visible";
+			  }
+			})
+			</script>
+<!--相册结束 -->  </div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+</div>
+
+{aspcms:foot}
+</body>
+</html>

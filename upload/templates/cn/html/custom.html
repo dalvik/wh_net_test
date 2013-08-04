@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<title>自定义表单-{aspcms:sitetitle}- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="[about:keyword]" >
+<meta name="Description" content="[about:desc]" >
+<META http-equiv=X-UA-Compatible content=IE=EmulateIE7>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.3790.4807" name=GENERATOR>
+<LINK media=screen href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/style.css" type=text/css rel=stylesheet>
+<LINK media=all href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/styles.css" type=text/css rel=stylesheet>
+<LINK media=all href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/pagenavi-css.css" type=text/css rel=stylesheet>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.form.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/scripts.js" type=text/javascript></SCRIPT>
+<SCRIPT type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li:first").addClass("homepage");
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
+
+	// Bookmark
+	function bookmark(title, url) {
+	  if (document.all)
+		window.external.AddFavorite(url, title);
+	  else if (window.sidebar)
+		window.sidebar.addPanel(title, url, "")
+}
+</SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/l10n.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/comment-reply.js" type=text/javascript></SCRIPT>
+</HEAD>
+
+<BODY>
+<DIV class=wrapper>
+	{aspcms:top}
+    <DIV class=banner><img title="{aspcms:sortname}" height="1" alt="{aspcms:sortname}" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/about-us.jpg" width="1"></DIV>    
+    <DIV class=container>
+    	<DIV class=containerTop></DIV>
+        <DIV class=containerContent>
+            <DIV class=content>
+                <DIV class=breadcrumb>当前位置:<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position}</DIV>
+                <DIV class="posts single" id=post-2>
+                    <div id="faqbox">
+	<form action="save.asp?action=add" method="post">
+    <div class="faqline">
+        <span class="faqtit">企 业 名 称：</span>
+        <input name="djm" type="text" />
+    </div>    
+    
+   <div class="faqline">
+        <span class="faqtit">代码证编号：</span>
+        <input name="dmz" type="text" />
+    </div>
+   <div class="faqline">
+        <span class="faqtit">公 司 规 模：</span>
+        <input name="gm" type="text" /> 
+    </div>
+	 <div class="faqline">
+        <span class="faqtit">公 司行  业：</span>
+        <input name="hangye" type="text" /> 
+    </div>
+ 
+  <div class="faqline">
+        <span class="faqtit">验 证 码：</span>
+        <input name="code" type="text" class="login_verification" id="verification" size="6" maxlength="6"/><font color="#FF0000">*</font>
+        <img src="{aspcms:sitepath}/inc/checkcode.asp" alt="看不清验证码?点击刷新!" onClick="this.src='{aspcms:sitepath}/inc/checkcode.asp'" />
+    </div>
+   <div class="faqline">
+        <span class="faqtit">&nbsp;</span>
+        <input type="submit" value=" 提交 "/>
+    </div>
+</form>
+</div>
+                </DIV>        
+            </DIV>
+            {aspcms:template src=left.html}
+        </DIV>
+    </DIV>
+</DIV>
+<DIV class=clear></DIV>
+{aspcms:foot}
+</BODY>
+</HTML>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gbk"?>
+<template version="0.1">
+	<ScreenShot>短信发送</ScreenShot>
+	<description>1.0</description>
+	<powerdby>上谷网络</powerdby>
+	<pagename>短信发送组件</pagename>
+	<pagepath>AspCms_smsReg.asp</pagepath>
+	<plugkey>p_sms</plugkey>
+</template>

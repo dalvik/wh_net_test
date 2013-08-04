@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{aspcms:sorttitle}-{aspcms:sitetitle}- Powered by AspCms2.0</title>
+<meta name="Keywords" content="{aspcms:sortkeyword}" >
+<meta name="Description" content="{aspcms:sortdesc}" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/public.css" rel="stylesheet" />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/front.css" rel="stylesheet" />
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/jquery1.4.2.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/front.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/productlist_roll.js"></script>
+<style>
+.atable{border-top:1px solid #ccc; border-left:1px solid #ccc; width:610px;margin:0px; padding:0px; margin-top:20px; display:block}
+.atable li{float:left;text-align:center}
+.atable li div { border-right:1px solid #ccc; border-bottom:1px solid #ccc; float:left; width:85px; height:60px; line-height:60px;margin:0px; padding:0px;overflow:hidden}
+.atable li div img{border:0;margin:0px;padding:0px;width:80px;height:60px;}
+.atable li div input{width:50px;margin-top:20px;text-align:right}
+.atable li div.p_name{width:150px}
+.atable li div.p_total{width:113px}
+.p_img{border-left:1px solid #ccc}
+li.ahead{font-weight:bold;}
+</style>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.form.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/scripts.js" type=text/javascript></SCRIPT>
+<script type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li:first").addClass("homepage");
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
+
+	// Bookmark
+	function bookmark(title, url) {
+	  if (document.all)
+		window.external.AddFavorite(url, title);
+	  else if (window.sidebar)
+		window.sidebar.addPanel(title, url, "")
+}
+</SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/l10n.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/comment-reply.js" type=text/javascript></SCRIPT>
+<style>
+.atable{border-top:1px solid #ccc; border-left:1px solid #ccc; width:610px;margin:0px; padding:0px; margin-top:20px; display:block}
+.atable li{float:left;text-align:center}
+.atable li div { border-right:1px solid #ccc; border-bottom:1px solid #ccc; float:left; width:85px; height:60px; line-height:60px;margin:0px; padding:0px;overflow:hidden}
+.atable li div img{border:0;margin:0px;padding:0px;width:80px;height:60px;}
+.atable li div input{width:50px;margin-top:20px;text-align:right}
+.atable li div.p_name{width:150px}
+.atable li div.p_total{width:113px}
+.p_img{border-left:1px solid #ccc}
+li.ahead{font-weight:bold;}
+</style>
+<script>
+String.prototype.startWith=function(str){
+if(str==null||str==""||this.length==0||str.length>this.length)
+  return false;
+if(this.substr(0,str.length)==str)
+  return true;
+else
+  return false;
+return true;
+}
+
+
+function changePrice(input,id){
+	var curtotal = document.getElementById("curtotal"+id);
+	var price = document.getElementById("price"+id);
+	var alltotal = document.getElementById("alltotal");
+	var inputs = document.getElementsByTagName("INPUT");
+	curtotal.innerHTML = input.value * price.innerHTML;
+	var spans = document.getElementsByTagName("SPAN");
+	var t=0,c=0;
+	for (var i=0;i<spans.length ;i++ )	{
+		if(spans[i].id.startWith("curtotal")) t += parseInt(spans[i].innerHTML);		
+	}
+	for (i=0;i<inputs.length ;i++ )	{
+		if(inputs[i].id.startWith("count")) c += parseInt(inputs[i].value);		
+	}
+
+	alltotal.innerHTML = t;
+	allcount.innerHTML = c;
+	
+	var _url = "cartsession.asp?action=add2cart&proid="+id+"&count="+input.value+"&price="+price.innerHTML;
+	$.ajax({
+		type: "GET",
+		url: _url,
+		cache:false,
+		success: function(html){
+			//$("#debug").append(html);
+		}
+
+	});
+
+	//alert(_url)
+}
+function deleteItem(id,a){
+var _url = "cartsession.asp?action=delete&proid="+id
+	$.ajax({
+	type: "GET",
+	url: _url,
+	cache:false,	
+	success: function(html){
+			$("#debug").append(html);
+		}
+	});
+	 
+	var ul = a.parentNode.parentNode.parentNode;
+	var li = a.parentNode.parentNode;
+	ul.removeChild(li); 
+
+}
+</script>
+</head>
+
+<body>
+{aspcms:top}
+
+<div class="wrap list_wrap singel_wrap">
+    {aspcms:template src=left.html}
+	
+	<div class="column_m">
+		    <div class="bt">
+			    <h4>{aspcms:sorttitle}</h4><span>您现在的位置：<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position} </span>
+			</div>
+			<DIV class="posts single" id=post-2>
+
+<!--content-->
+{aspcms:cartlist}
+<!--content end-->
+
+
+                    <DIV class=clear></DIV>
+                </DIV>
+		</div>
+		<div class="clearboth"></div>
+</div>
+
+{aspcms:foot}
+</body>
+</html>

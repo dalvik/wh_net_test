@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gbk"?>
+<template version="0.1">
+	<ScreenShot>index.jpg</ScreenShot>
+	<description>	
+		绿色全功能模板
+	</description>
+<files>
+<file name="album.html">相册详细模版</file>
+<file name="albumlist.html">相册列表模版</file>
+<file name="apply.html">职位申请模版</file>
+<file name="down.html">下载模版</file>
+<file name="downlist.html">下载列表模版</file>
+<file name="editpass.html">资料修改模版</file>
+<file name="foot.html">底部模版</file>
+<file name="gbook.html">在线留言模版</file>
+<file name="head.html">头部模版</file>
+<file name="index.html">首页模版</file>
+<file name="job.html">招聘详细模版</file>
+<file name="joblist.html">招聘列表模版</file>
+<file name="left.html">辅助模版</file>
+<file name="login.html">登录模版</file>
+<file name="news.html">新闻详细模版</file>
+<file name="newslist.html">新闻列表模版</file>
+<file name="product.html">产品详细模版</file>
+<file name="productbuy.html">产品购买模版</file>
+<file name="productlist.html">产品列表模版</file>
+<file name="reg.html">注册模版</file>
+<file name="userbuy.html">用户面板订单查看模板</file>
+<file name="userinfo.html">用户资料模板</file>
+<file name="rssmap.html">RSS 地图模版</file>
+<file name="search.html">搜索模版</file>
+<file name="sitemap.html">网站地图模版</file>
+<file name="taglist.html">tag 列表模版</file>
+<file name="tags.html">热门 tag 列表模版</file>
+<file name="about.html">单页模版</file>
+<file name="custom.html">自定义表单模版</file>
+<file name="left1.html">自定义辅助模板</file>
+<file name="userleft.html">用户中心自定义辅助模板</file>
+<file name="productcart.html">购物车模版</file>
+<file name="productcheckout.html">购物车结账模版</file>
+<file name="productcomfirm.html">购物车账单确认模版</file>
+<file name="productprint.html">购物车账单打印模版</file>
+</files>
+</template>

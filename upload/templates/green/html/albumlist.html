@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{aspcms:sorttitle}-{aspcms:sitetitle}- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="{aspcms:sortkeyword}" >
+<meta name="Description" content="{aspcms:sortdesc}" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/public.css" rel="stylesheet" />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/front.css" rel="stylesheet" />
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/jquery1.4.2.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/front.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/productlist_roll.js"></script>
+</head>
+
+<body>
+{aspcms:top}
+
+<div class="wrap list_wrap">
+    {aspcms:template src=left.html}
+	
+	<div class="column_m">
+		    <div class="bt">
+			    <h4>图片列表</h4><span>您现在的位置：<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position}</span>
+			</div>
+			<div class="nr">
+				<ul>
+                {aspcms:list size=10 order=id} 
+				    <li><a href="[list:link]">[list:title len=50]</a><span>[list:date style=yy-m-d]</span></li>
+                     {/aspcms:list} 
+				
+				</ul>
+			</div>
+			<div class="pagelink">[list:pagenumber len=5]
+			</div>
+		</div>
+		<div class="clearboth"></div>
+</div>
+
+{aspcms:foot}
+</body>
+</html>

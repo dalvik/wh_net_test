@@ -1,0 +1,35 @@
+<DIV class=friendlink >
+    <H3>友情链接</H3>
+    <UL>
+    {aspcms:linklist  type=pic}      
+        <LI><a href="[linklist:link]" target="_blank"><img style="border: 1px solid #D6EAF1;" src="[linklist:pic]" border="0" height="33" width="100" /></a></LI>
+    {/aspcms:linklist}
+    </UL>
+    <br/>
+    <br/>
+    <UL style="margin-top:5px;">
+    {aspcms:linklist  type=font}
+        <LI><a href="[linklist:link]" target="_blank">[linklist:name]</a></LI>
+    {/aspcms:linklist}
+    </UL>
+</DIV>
+<DIV class=footer>
+    <UL class=footpage>
+        <LI class=nb><a href="{aspcms:sitepath}{aspcms:languagepath}">首页</A></LI>
+        {aspcms:navlist type=0}
+        <LI class="page_item page-item-755"><A href="[navlist:link]">[navlist:name]</A></LI>
+        {/aspcms:navlist}
+    </UL>
+    <P>电话：{aspcms:companyphone} 传 真：{aspcms:companyfax} 邮 箱：{aspcms:companyemail}   </P>
+    <P>{aspcms:copyright} <A href="http://www.miibeian.gov.cn/">{aspcms:companyicp}</A>{aspcms:statisticalcode} </P>
+    <p>
+今日：{visits:today} 
+昨日：{visits:yesterday} 
+本月：{visits:month} 
+全部：{visits:all}  </p>
+</DIV>
+{aspcms:onlineservice}
+{aspcms:kf}
+{aspcms:floatad}
+{aspcms:coupletad}
+{aspcms:windowad}

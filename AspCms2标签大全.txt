@@ -1,0 +1,450 @@
+2.2.9中统一了首页视频和内页视频路径调用标签，标签统一为[*:videourl]，即首页为[content:videourl],列表页为[list:videourl],内容页是具体需要可分为[news:videourl]或者[content:videourl]
+2.2.8中增加了用户对权限的读取，{aspcms:userright},0为超级管理员，1为注册用户，2为游民
+2.2.8中修复了[list:content]读取标签出错
+2.2.7新增[about:pic]、[cimages:i]、[*:videourl]视频路径,即首页为[content:videourl],列表页为[list:videourl],内容页视具体需要可分为[news:videourl]或者[content:videourl]
+2.2.7中更改了downurl标签的设置，即无需<a href="[content:downurl]">点击下载</a>更改为[content:downurl]，即无需使用链接
+2.2.4新增{aspcms:form}、{navlist:pic} 
+
+相关解释：
+1、首页指的是index.html文件。列表页一般指newslist.html，productlist.html等文件，该文件对应于后台栏目添加或修改时的列表模板。内页一般指news.html,product.html等文件，该文件对应于后台栏目添加或修改时的内容页模板。
+2、[*:videourl]：[*:videourl]，首页为[content:videourl],列表页为[list:videourl],内容页是具体需要可分为[news:videourl]或者[content:videourl]
+请对照以下说明，更多信息请访问 http://www.aspcms.com
+
+
+一、网站通用标签
+
+{aspcms:sitepath}              网站终极目录(可放在二级目录,其它语言则在三级目录)
+
+{aspcms:languagepath}          语言目录
+
+{aspcms:siteurl}               网站地址
+
+{aspcms:sitelogo}              LOGO地址
+
+{aspcms:sitetitle}             网站标题
+
+{aspcms:additiontitle}         网站附加标题
+
+{aspcms:sitekeywords}          网站关键词
+
+{aspcms:sitedesc}              网站描述
+
+{aspcms:defaulttemplate}       默认模板
+
+{aspcms:companyname}           公司名称
+
+{aspcms:companyaddress}        公司地址
+
+{aspcms:companypostcode}       邮政编码
+
+{aspcms:companycontact}        联系人
+
+{aspcms:companyphone}          电话号码
+
+{aspcms:companymobile}         手机号码
+
+{aspcms:companyfax}            公司传真
+
+{aspcms:companyemail}          电子邮箱
+
+{aspcms:companyicp}            备案号
+
+{aspcms:statisticalcode}       统计代码
+
+{aspcms:copyright}             网站版权
+
+{aspcms:languagepath}          语言目录(后台多语言设置中设置)
+
+{label:****}                   自定义标签
+{aspcms:userright}
+
+
+{aspcms:slide}
+{aspcms:slidea}
+以上两个调用为同一个
+{aspcms:slideb}
+{aspcms:slidec}
+{aspcms:slided}
+{aspcms:onlineservice}在线客服
+{aspcms:kf}其它客服系统
+{aspcms:floatad}漂浮广告
+{aspcms:coupletad}对联广告
+{aspcms:windowad}弹出广告
+
+
+二、常用内容调用签
+
+
+
+
+==============================所有页面都可调用============================
+首页内容列表调用标签(无分页)
+{aspcms:content sort=2 num=4 order=order star=1}
+	[content:id]编号
+	[content:title]标题
+	[content:content]内容
+	[content:downurl]下载地址
+	[content:link]链接
+	[content:i]计数
+	[content:titlecolor]标题颜色
+	[content:sortname]分类名称
+	[content:sortlink]分类链接
+	[content:date]日期
+	[content:visits]浏览次数	
+	[content:author]作者
+	[content:source]来源
+	[content:tag]tag标签
+	[content:istop]置顶
+	[content:isrecommend]推荐
+	[content:isimage]图片新闻
+	[content:isfeatured]特别推荐
+	[content:isheadline]头条
+	[content:desc]描述
+	[content:pic]图片
+	[content:indexvideo]首页视频
+	[content:videourl] 内页视频
+{/aspcms:content}
+sort 分类ID
+num 显示数量
+order 排序规则
+srar 星级(1,2,3,4,5)
+
+*************************无限级菜单************************************************
+  {aspcms:navlist}
+			    <li><a href="[navlist:link]">[navlist:name]</a></li>
+							  {aspcms:1navlist type=[navlist:sortid]}
+						<a href="[1navlist:link]">[1navlist:name]</a>
+								  {aspcms:2navlist type=[1navlist:sortid]}
+						<a href="[2navlist:link]">[2navlist:name]</a>
+								{aspcms:3navlist type=[2navlist:sortid]}
+						<a href="[3navlist:link]">[3navlist:name]</a>
+							{/aspcms:3navlist}
+							{/aspcms:2navlist}
+						{/aspcms:1navlist}
+                {/aspcms:navlist}
+
+
+[navlist:pic] 调用栏目图片
+*********************************************************************************
+
+分类名称及链接调用
+{aspcms:type sort=8}
+  <A title="[type:name]" href="[type:link]">[type:name]</A>
+{/aspcms:type}
+
+首页单篇内容调用
+{aspcms:about sort=8 len=150 }
+	[about:info len=80]
+	[about:title]
+	[about:link]
+	[about:pic]
+{/aspcms:about}
+
+{aspcms:template src=left.html}         辅助模板	
+
+==============================单页可调用============================
+默认模板about.html
+单页调用标签
+	[about:title]标题                在添加分类时设置
+	[about:keyword]关键词            在添加分类时设置
+	[about:desc]描述                 在添加分类时设置
+	[about:info]详细内容             在添加分类时设置
+	[about:pic]图片			 在添加分类时设置
+	
+	{aspcms:sortname}分类名称
+	{aspcms:parentsortid}上级分类ID
+	{aspcms:sortid}分类ID
+	{aspcms:topsortid}顶级分类ID
+
+当前位置
+首页{aspcms:position} >>[position:link]{/aspcms:position}
+首页 >>新闻发布 >>公司新闻 
+
+内容分页  在编辑内容时插入到内容中即可
+{aspcms:page}
+
+==============================列表页可调用============================
+列表页调用标签
+{aspcms:sorttitle}标题	             在添加分类时设置
+{aspcms:sortkeyword}关键词	         在添加分类时设置
+{aspcms:sortdesc}描述	                 在添加分类时设置
+{aspcms:list size=10 order=id}
+	[list:id] 编号
+	[list:link]链接
+	[list:i]计数
+	[list:content]内容
+	[list:downurl]下载地址
+	[list:titlecolor]标题颜色
+	[list:sortname]分类名称
+	[list:sortlink]分类链接
+	[list:date]日期
+	[list:visits]浏览次数
+	[list:author]作者
+	[list:source]来源
+	[list:tag]tag标签
+	[list:istop]置顶
+	[list:isrecommend]推荐
+	[list:isimage]图片新闻
+	[list:isfeatured]特别推荐
+	[list:isheadline]头条
+	[list:pic]图片
+{/aspcms:list}
+
+[list:pagenumber len=5]               分页条调用标签
+
+当前位置
+首页{aspcms:position} >>[position:link]{/aspcms:position}
+首页 >>新闻发布 >>公司新闻 
+
+==============================详细可调用============================
+由于详细页content标签和{aspcms:content}标签有冲突，所以原[content:]标签改为[news:]
+
+详细页调用标签
+	[news::title]标题
+	[news:keyword]关键词             在添加内容时可以设置
+	[news:desc]描述	              在添加内容时可以设置
+	[news:link]链接
+	[news:info]内容
+	[news:i]计数
+	[news:titlecolor]标题颜色
+	[news:sortname]分类名称
+	[news:sortlink]分类链接
+	[news:date]日期
+	[news:visits]浏览次数
+	[news:author]作者
+	[news:source]来源
+	[news:downurl]下载地址
+	[news:istop]置顶
+	[news:isrecommend]推荐
+	[news:isimage]图片新闻
+	[news:isfeatured]特别推荐
+	[news:isheadline]头条
+	[news:pic]图片
+	[news:videourl]视频
+	[news:pics]多图
+	[news:tag]tag标签
+	[news:linktag]带链接的tag标签
+{aspcms:comment}              评论标签
+
+
+全站评论标签
+{aspcms:comment} 
+	[comment:i]评论计数 
+	[comment:name]评论人
+	[comment:link]评论文章地址
+	[comment:ip]评论人IP
+	[comment:info len=5]评论内容
+	[comment:date style=yy-m-d]评论时间
+{/aspcms:comment} 
+
+
+内容分页  在编辑内容时插入到内容中即可
+{aspcms:page}
+
+{aspcms:prev}上一篇
+{aspcms:next}下一篇
+{aspcms:nexttitle} 下一篇的题目
+{aspcms:prevtitle} 上一篇的题目
+{aspcms:nextlink}下一篇的链接
+{aspcms:prevlink}上一篇的链接
+
+当前位置
+首页{aspcms:position} >>[position:link]{/aspcms:position}
+首页 >>新闻发布 >>公司新闻 
+
+评论功能调用  {aspcms:comment}
+
+
+多图片的处理
+{aspcms:cimages count=5 contentid=1}
+[cimages:src]
+[cimages:i]
+{/aspcms:cimages}
+count 输出数量，小于1或者不为数字的作为0处理，不输出
+contentid 输出的内容id，一般在内容页调用，只需填写 contentid=[content:id]即可,错误的输入被赋值为-1
+[cimages:src] 将被替换为/upLoad/product/month_1107/201107011448421775.png等数据循环输出
+
+首页调用留言
+{aspcms:form}调用自定义表单项
+
+{aspcms:gbook num=4 order=order}
+        [gbook:i]计数
+	[gbook:status]留言状态
+	[gbook:title]标题
+	[gbook:name]姓名
+	[gbook:winfo]留言内容
+	[gbook:wdate]留言时间
+	[gbook:rinfo]回复
+	[gbook:rdate]回复时间
+{/aspcms:gbook}
+
+三、IF标签使用
+	1、满足条件则显示
+	{if:条件语句}
+		显示内容
+	{end if}
+	
+	2、满足条件则显示内容1,否则显示内容2
+	{if:条件语句}
+		显示内容1
+	{else}
+		显示内容2
+	{end if}
+	
+	实例:
+	1,给满足条件的添加不同的样式
+	{aspcms:content}
+		<a {if:[content:i]=1} style="..."{end if} link="[content:link]">[content:title]</a>	
+	{/aspcms:content}
+
+四、统计标签
+	今日{visits:today}
+	昨日{visits:yesterday}
+	本月{visits:month}
+	全部{visits:all}
+
+五、友情链接
+	调用文字链接
+    {aspcms:linklist  type=font group=1}
+        <LI><a href="[linklist:link]" target="_blank">[linklist:name]</a></LI>
+    {/aspcms:linklist}
+	
+	调用图片链接
+    {aspcms:linklist  type=pic group=1}      
+        <LI><a href="[linklist:link]" target="_blank"><img style="border: 1px solid #D6EAF1;" src="[linklist:pic]" border="0" height="33" width="100" /></a></LI>
+    {/aspcms:linklist}
+	
+	type=all 或去掉type属性调用全部的链接	
+	
+
+六、TAG标签内容调用（和内容调用一样，只需要加一个tag属性）
+	标签相关内容调用
+	{aspcms:content sort=2 num=4 order=order tag=aspcms,asp,php star=1}
+		[content:title]标题
+		[content:link]链接
+		[content:i]计数
+		[content:titlecolor]标题颜色
+		[content:sortname]分类名称
+		[content:sortlink]分类链接
+		[content:date]日期
+		[content:visits]浏览次数
+		[content:author]作者
+		[content:source]来源
+		[content:tag]tag标签
+		[content:istop]置顶
+		[content:isrecommend]推荐
+		[content:isimage]图片新闻
+		[content:isfeatured]特别推荐
+		[content:isheadline]头条
+		[content:desc]描述
+		[content:pic]图片
+	{/aspcms:content}
+
+	标签相关内容列表页调用
+	{aspcms:list size=10 order=id}
+		[list:link]链接
+		[list:i]计数
+		[list:titlecolor]标题颜色
+		[list:sortname]分类名称
+		[list:sortlink]分类链接
+		[list:date]日期
+		[list:visits]浏览次数
+		[list:author]作者
+		[list:source]来源
+		[list:tag]tag标签
+		[list:istop]置顶
+		[list:isrecommend]推荐
+		[list:isimage]图片新闻
+		[list:isfeatured]特别推荐
+		[list:isheadline]头条
+		[list:pic]图片
+	{/aspcms:list}
+		
+	[list:pagenumber len=5]               分页条调用标签
+	
+	标签列表调用
+	{aspcms:taglist size=50 order=visits}
+		[taglist:link][taglist:title]
+	{/aspcms:taglist}
+	
+	[taglist:pagenumber len=5]               分页条调用标签
+    order可选值visits,time,id
+
+七、会员相关页面
+
+	会员相关资料页面
+	[user:userid] 用户ID号
+	[user:username] 用户名
+	[user:UserStatus] 账号状态
+	[user:RegTime] 注册时间
+	[user:LastLoginIP] 最后登录IP
+	[user:LastLoginTime] 最后登录时间
+	[user:LoginCount] 登录次数
+	[user:Gender] 性别
+	[user:TrueName] 真实姓名
+	[user:Birthday] 生日
+	[user:Country] 国家
+	[user:Province] 省份
+	[user:City] 城市
+	[user:Address] 地址
+	[user:PostCode] 邮编
+	[user:Phone] 电话
+	[user:Mobile] 手机
+	[user:Email] 电子邮箱
+	[user:QQ] QQ号码
+	[user:MSN] MSN账号
+
+	会员订购列表
+	{aspcms:userbuylist size=10}
+		[userbuylist:i]	计数
+		[userbuylist:OrderNo]订单号
+		[userbuylist:OrderLink]	订单详细链接
+		[userbuylist:OrderTime] 订购时间
+		[userbuylist:State] 是否付款
+		[userbuylist:Payment] 支付方式
+	{/aspcms:userbuylist} 
+
+八、订单相关页面
+	订单完成页面
+		订单号码：{aspcms:order.no} 
+		订单日期：{aspcms:order.date} 
+		用 户 名：{aspcms:order.username} 
+		订单状态：{aspcms:order.state} 
+		订单总金额：{aspcms:order.total}
+		商品总数量：{aspcms:order.count} 	
+		客户姓名：{aspcms:order.nicename}
+		联系电话：{aspcms:order.tel}
+		手机号码：{aspcms:order.cellphone}
+		邮政编码：{aspcms:order.zipcode}
+		联系地址：{aspcms:order.address}
+		电子邮箱：{aspcms:order.email}
+		简单留言：{aspcms:order.note}
+		支付方式：  {aspcms:order.payment}
+		商品列表：{aspcms:selectproduct}
+
+	订单填写页面
+		商品列表：{aspcms:selectproduct}
+		订单号：{aspcms:order.orderno}
+		用户名：{aspcms:order.username}
+
+
+九、说明
+1.0 与2.0标签区别
+将原来new,down,product,pic 标签变为content标签
+将原来newlist,downlist,productlist,piclist 标签变为list标签
+
+type	栏目类型
+1	单篇
+2	文章列表
+3	产品列表
+4	下载列表
+5	招聘列表
+6	相册列表
+7	链接
+8	视频列表
+
+很多用户反映内容详细页不能使用CONTENT标签调用列表，如果内容页调用了content标签，
+请将调用内容详细的标签改为news
+
+视频管理功能后台操作：视频管理在来源处填写视频地址，如果是网络视频，直接粘贴完整地址，（http://player.youku.com/player.php/sid/XMzYyNTY0NzQw/v.swf），如果是本地视频，地址填写方法与标签调用时一致，比如在template（模版目录）文件夹下的images文件夹下，就使用{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/START.AVI。如果是在根目录下即顶级目录下的images文件夹下，就填：../images/START.AVI
+新增关于我们图片调用功能：[about:pic]标签

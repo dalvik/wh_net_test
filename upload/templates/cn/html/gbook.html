@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<title>{aspcms:sorttitle}-{aspcms:sitetitle}- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="{aspcms:sortkeyword}" >
+<meta name="Description" content="{aspcms:sortdesc}" >
+<META http-equiv=X-UA-Compatible content=IE=EmulateIE7>
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.3790.4807" name=GENERATOR>
+<LINK media=screen href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/style.css" type=text/css rel=stylesheet>
+<LINK media=all href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/styles.css" type=text/css rel=stylesheet>
+<LINK media=all href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/pagenavi-css.css" type=text/css rel=stylesheet>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.form.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/scripts.js" type=text/javascript></SCRIPT>
+<SCRIPT type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li:first").addClass("homepage");
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
+
+	// Bookmark
+	function bookmark(title, url) {
+	  if (document.all)
+		window.external.AddFavorite(url, title);
+	  else if (window.sidebar)
+		window.sidebar.addPanel(title, url, "")
+}
+</SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/l10n.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/comment-reply.js" type=text/javascript></SCRIPT>
+</HEAD>
+
+<BODY>
+<DIV class=wrapper>
+	{aspcms:top}
+    <DIV class=banner><img title="{aspcms:sortname}" height="1" alt="{aspcms:sortname}" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/gbook.jpg" width="1"></DIV>    
+    <DIV class=container>
+    	<DIV class=containerTop></DIV>
+        <DIV class=containerContent>
+            <DIV class=content>
+                <DIV class=breadcrumb>当前位置:<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position}</DIV>
+                <DIV class="posts single" id=post-2>
+<br>
+<style type="text/css">
+<!--
+#gbooklist {
+	width: 98%;
+	text-align:center;
+}
+#gbooklist .faq  ,
+#gbooklist .reply
+{
+	text-align:left;
+	width: 98%;
+	word-wrap: break-word; 
+	word-break: break-all;
+}
+#gbooklist .faq{
+	margin-bottom:15px;
+}
+#gbooklist .faqtit,
+#gbooklist .faqcon
+{
+padding-left:5px;
+}
+
+#gbooklist .faqtit{
+background:#A8DFFA;
+color:#0B3779;
+font-size:14px;
+}
+
+#gbooklist .reply{
+	border: 1px dashed #FF0000;
+	width:95%;
+	margin-bottom:10px;
+	margin-left:5px;
+	padding:3px;
+}
+.pageNavi{border:none;}
+/* CSS Document */
+#faqbox {}
+#faqbox .faqline{ line-height:2em; height:35px; text-align:left}
+#faqbox .faqline .faqtit{  width:70px; display:block; float:left; clear:both; text-align:right}
+#faqbox .Content{ line-height:2em; height:120px; text-align:left}
+#faqbox .Content  .faqtit{  width:70px; display:block; float:left; clear:both; text-align:right}
+#faqbox .Content textarea { height:100px;}
+
+-->
+</style>
+<div id="gbooklist">
+    {aspcms:gbooklist size=5 order=time}
+    <div class="faq">   
+        <div class="faqtit">标题：[gbooklist:title len=30]</div>
+        <div style="padding-left:5px;">姓名：[gbooklist:name] <span>[[gbooklist:wdate style=yy-m-d]]<span></div>    
+        <div class="faqcon">留言内容：[gbooklist:winfo]</div>
+    </div>
+       {if:[gbooklist:status]}
+    <div class="reply">
+        <div>回复内容：[gbooklist:rinfo] <span>[[gbooklist:rdate style=yy-m-d]]</div>
+    </div>
+    {end if}
+    {/aspcms:gbooklist}
+    
+     <DIV class=pageNavi><DIV class=wp-pagenavi>[gbooklist:pagenumber len=5]</DIV></DIV>
+
+</div>    
+<div id="faqbox">
+<form action="save.asp?action=add" method="post">
+    <div class="faqline">
+        <span class="faqtit">问题：</span>
+        <input name="FaqTitle" type="text" /><font color="#FF0000">*</font>
+    </div>    
+    <div class="Content">
+        <span class="faqtit">内容：</span>
+        <textarea name="Content" cols="60" rows="5"></textarea><font color="#FF0000">*</font>
+    </div>
+   <div class="faqline">
+        <span class="faqtit">联系人：</span>
+        <input name="Contact" type="text" /><font color="#FF0000">*</font>
+    </div>
+   <div class="faqline">
+        <span class="faqtit">联系方式：</span>
+        <input name="ContactWay" type="text" /> <font color="#FF0000">*</font> 请注明是手机、电话、QQ、Email,方便我们和您联系
+    </div>
+  <div class="faqline">
+        <span class="faqtit">验证码：</span>
+        <input name="code" type="text" class="login_verification" id="verification" size="6" maxlength="6"/><font color="#FF0000">*</font>
+        <img src="{aspcms:sitepath}/inc/checkcode.asp" alt="看不清验证码?点击刷新!" onClick="this.src='{aspcms:sitepath}/inc/checkcode.asp'" />
+    </div>
+   <div class="faqline">
+        <span class="faqtit">&nbsp;</span>
+        <input type="submit" value=" 提交 "/>
+    </div>
+</form>
+</div>  
+
+                    <DIV class=clear></DIV>
+                </DIV>        
+            </DIV>
+            {aspcms:template src=left.html}
+        </DIV>
+    </DIV>
+</DIV>
+<DIV class=clear></DIV>
+{aspcms:foot}
+</BODY>
+</HTML>

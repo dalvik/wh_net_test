@@ -1,0 +1,27 @@
+.yToolbar
+{
+	BACKGROUND-COLOR: #E8E8E8;
+	HEIGHT: 24px;
+	LEFT: 0px;
+	POSITION: relative;
+	TOP: 0px;
+}
+TABLE.Toolbar
+{
+	BORDER-RIGHT: #FFFFFF 1px solid;
+}
+
+
+TABLE.StatusBar
+{
+	BORDER-RIGHT: #B0B0B0 1px solid;
+	BORDER-BOTTOM: #B0B0B0	1px solid;
+	BACKGROUND-COLOR: #E8E8E8;
+}
+TD{FONT: 12px verdana,arial,sans-serif,ËÎÌו;}
+TD.StatusBarBtnOff {padding:1px 5px;border:1px outset;cursor:pointer;}
+TD.StatusBarBtnOn {padding:1px 5px;border:1px inset;background-color: #F9FBFD;}
+
+input,option,select,textarea {
+	Font-family:Verdana, Arial, Helvetica, Sans-serif,ËÎÌו;
+}

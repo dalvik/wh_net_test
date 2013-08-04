@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{aspcms:sorttitle}-{aspcms:sitetitle}- Powered by AspCms2.0</title>
+<meta name="Keywords" content="{aspcms:sortkeyword}" >
+<meta name="Description" content="{aspcms:sortdesc}" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/public.css" rel="stylesheet" />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/front.css" rel="stylesheet" />
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/jquery1.4.2.js"></script>
+
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.form.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/scripts.js" type=text/javascript></SCRIPT>
+<SCRIPT type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li:first").addClass("homepage");
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
+
+	// Bookmark
+	function bookmark(title, url) {
+	  if (document.all)
+		window.external.AddFavorite(url, title);
+	  else if (window.sidebar)
+		window.sidebar.addPanel(title, url, "")
+}
+
+function isEmail(oEmail) {
+	if (oEmail.value.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1){
+		oEmail.style.border="#b7daef 1px solid";
+		resetErr(oEmail);
+		return true;
+	}
+	else{
+		oEmail.style.border="red 1px solid";
+		oEmail.nextSibling.style.display = "block";
+		//oEmail.focus();
+		return false;
+	}
+}
+function checkForm(frm){
+	var flag = true;	
+	if(frm.nicename.value==""){frm.nicename.nextSibling.style.display="block";flag=false;}	
+	if(frm.cellphone.value==""){frm.cellphone.nextSibling.style.display="block";flag=false;}
+	flag = isEmail(frm.Email);
+	return flag;
+}
+function resetErr(obj){obj.nextSibling.style.display = "none";return true;}
+</SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/l10n.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/comment-reply.js" type=text/javascript></SCRIPT>
+<style type="text/css">
+.ckInput{BORDER: #B7DAEF 1px solid;WIDTH: 150px; height:18px;}
+.ckError{ color:red; display:none;}
+</style>
+</head>
+
+<body>
+{aspcms:top}
+
+<div class="wrap list_wrap singel_wrap">
+    {aspcms:template src=left.html}
+	
+	<div class="column_m">
+		    <div class="bt">
+			    <h4>{aspcms:sorttitle}</h4><span>您现在的位置：<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position} </span>
+			</div>
+			<div class="nr">
+				
+				<div class="nr_text"><form method="post" name="" action="?act=comfirm" style=" margin-top:20px;" onSubmit="return checkForm(this)">
+<table border="0" cellpadding="2" cellspacing="0" align="center" width="80%">
+    <tr>
+      <td width="20%" height="28">选中的产品：</td>
+      <td width="80%">
+      	{aspcms:selectproduct}
+      </td>
+    </tr>
+    <tr>
+    <tr>
+      <td width="20%" height="28">订单编号：</td>
+      <td width="80%">{aspcms:order.orderno}<input type="hidden" name="OrderNo" value="{aspcms:order.orderno}" /></td>
+    <tr>
+      <td width="20%" height="28">联系人：</td>
+      <td width="80%">
+      <input type="text" name="nicename"  maxlength="20" class="ckInput" onBlur="return value!=''?resetErr(this):false;" size="16" value="" /><span class="ckError">必填字段</span>
+      <input type="hidden" name="UserName" value="{aspcms:order.username}">
+      </td>      
+    </tr>
+    <tr>
+      <td height="28">支付方式：</td>
+      <td>
+        <!--<input type="radio"  value="线下支付" name="Payment" checked />线下支付
+        <input type="radio"  value="站内支付" name="Payment" />站内支付-->
+        <input type="radio"  value="在线支付" checked name="Payment" />在线支付
+        <input type="radio"  value="银行支付" name="Payment" />银行支付
+        <!--<input type="radio"  value="货到付款" name="Payment" />货到付款-->
+        <input type="radio"  value="邮局付款" name="Payment" />邮局付款       
+      </td>
+    </tr>		
+    <tr>
+      <td height="28">联系电话：</td>
+      <td><input type="text" name="tel" onKeyUp="this.value=this.value.replace(/\D/g,'');" maxlength="20" class="ckInput"  size="16"  value=""/></td>
+    </tr>
+    <tr>
+      <td height="28">手机：</td>
+      <td><input type="text" name="cellphone"  onBlur="return value!=''?resetErr(this):false;" onKeyUp="this.value=this.value.replace(/\D/g,'');" maxlength="11"   class="ckInput"  size="16" value=""/><span class="ckError">必填字段</span></td>
+    </tr>
+    <tr>
+      <td height="28">邮箱：</td>
+      <td><input type="text" name="Email" onBlur="isEmail(this)"  class="ckInput"  size=16 maxlength="50"  value=""/><span class="ckError">Email格式错误</span></td>
+    </tr> 
+    <tr>
+      <td height="28">地址：</td>
+      <td><input type="text" name="Address"  maxlength="200"  class="ckInput"  size="16" value=""/></td>
+    </tr>
+    <tr>
+      <td height="28">邮政编码：</td>
+      <td><input type="text" name="zipcode" onKeyUp="this.value=this.value.replace(/\D/g,'');" maxlength="6"  class="ckInput"  size="16" value=""/></td>
+    </tr>
+    <tr style="display:none">
+      <td height="28">配送地区：</td>
+      <td><input type="text" name="to"  class="ckInput"  size=16 maxlength="50" value=""/></td>
+    </tr>
+    <tr>
+    <tr>
+      <td height="28">备注：</td>
+      <td><textarea name="note" cols="50" rows="6"  class="ckInput"  style="WIDTH: 370px;"></textarea>      
+      </td>
+    </tr>
+    <tr style="display:none">
+      <td height="28">需要发票：</td>
+      <td>
+        <input type="radio"  value="false" name="Invoice" checked />否
+        <input type="radio"  value="true" name="Invoice" />是             
+      </td>
+    </tr>
+    <!--<tr>
+      <td height="28">验证码：</td>
+      <td><input type="text" name="code"  style="BORDER: #B7DAEF 1px solid;WIDTH: 50px; height:18px;" size=10 maxlength="4" /><a onClick="SeedImg.src='{aspcms:sitepath}{aspcms:languagepath}inc/checkcode.asp'"><img src="{aspcms:sitepath}{aspcms:languagepath}inc/checkcode.asp" id="SeedImg" align="absmiddle" style="cursor:pointer;" border="0" /></a></td>
+    </tr>-->
+    <tr>
+      <td height="28"></td>
+      <td><input type="submit" name="Submit"  value="现在订购" style="BORDER: #B7DAEF 1px solid;color:#0099ff; padding:5px; display:block;"  /></td>
+    </tr>
+</table>
+</form></div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+</div>
+
+{aspcms:foot}
+</body>
+</html>

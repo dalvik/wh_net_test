@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<title>订单打印</title>
+<META http-equiv=X-UA-Compatible content=IE=EmulateIE7>
+<META http-equiv=Content-Type content="text/html; charset=gbk">
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<style type="text/css">
+.oc{min-width:583px;border:#cccccc 1px solid;}
+.oc_thead{background:url(../templates/cn/images/ocTHead.gif); height:26px; line-height:26px}
+.oc_thead div{background:url(../templates/cn/images/bg.png) no-repeat left -43px;height:26px; width:120px; text-align:center; color:white; font-weight:bold;float:left}
+.oc_content{ border:0px; margin:0px; padding:5px; }
+.oc_content_b{border-bottom:#cccccc 1px solid;}
+.oc_content_h{border-top:#cccccc 1px solid;}
+fieldset p{ text-align:left; margin:0px; padding:3px;}
+img{border:0px}
+
+
+.bank{ list-style:none}
+.banklogo{ border:0px;}
+</style>
+</HEAD>
+
+<BODY>
+<div class="oc">
+<div class="oc_thead"><div>订单信息</div></div>
+<div class="oc_content"> 
+<table cellpadding="0" cellspacing="25" border="0" align="center" width="90%">
+  <tr align="center">
+    <td width="50%" align="left">
+<p>订单号码：{aspcms:order.no}
+<p>订单日期：{aspcms:order.date}  
+<p>用 户 名：{aspcms:order.username}
+<p>订单状态：{aspcms:order.state}
+<p>商品总数量：{aspcms:order.count}
+<p>订单总金额：{aspcms:order.total}元
+
+  <p>订单备注：<br>
+  * 请记住订单号码.<br>
+  * 支付确认后,您将收到一封支付(结算)的电子邮件 
+	</td>
+    <td>
+    
+<table width="245" cellpadding="0" cellspacing="0">
+<tr>
+<td><fieldset style="width:245px" align="center"> <legend> 订购人信息 </legend>
+<p>客户姓名：{aspcms:order.nicename}</p>
+<p>联系电话：{aspcms:order.tel}</p>
+<p>手机号码：{aspcms:order.cellphone}</p>
+<p>邮政编码：{aspcms:order.zipcode}</p>
+<p>联系地址：{aspcms:order.address}</p>
+<p>电子邮箱：{aspcms:order.email}</p>
+<p>简单留言：{aspcms:order.note}</p>
+</fieldset></td>
+</tr>
+</table>
+</td>
+  </tr>
+</table>
+</div>
+
+
+<div class="oc_thead"><div>购物信息</div></div>
+<div class="oc_content">
+ {aspcms:selectproduct}
+</div>
+
+
+<div class="oc_thead"><div>账单明细</div></div>
+<div class="oc_content">
+<dl>
+<dd>总 金 额： {aspcms:order.total}元(需支付金额)
+</dl>
+</ul>
+</div>
+
+
+
+<div class="oc_thead"><div>支付方式</div></div>
+<div class="oc_content oc_content_b">
+<p style="padding-left:40px">{aspcms:order.payment}</p>
+<p style="padding-left:40px">{aspcms:order.paymentdesc}</p>
+</div>
+</div>
+</BODY>
+</HTML>
+
+
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gb2312"?>
+<template version="0.1">
+	<ScreenShot>投票调查插件</ScreenShot>
+	<description>1.0</description>
+	<powerdby>上谷网络</powerdby>
+	<pagename>投票调查</pagename>
+	<pagepath>vote_setting.asp</pagepath>
+	<plugkey>p_vote</plugkey>
+</template>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{aspcms:sorttitle}-{aspcms:sitetitle}- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="{aspcms:sortkeyword}" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<meta name="Description" content="{aspcms:sortdesc}" >
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/public.css" rel="stylesheet" />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/front.css" rel="stylesheet" />
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/jquery1.4.2.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/front.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/productlist_roll.js"></script>
+</head>
+
+<body>
+{aspcms:top}
+
+<div class="wrap list_wrap singel_wrap">
+    {aspcms:template src=left.html}
+	
+	<div class="column_m">
+		    <div class="bt">
+			    <h4>{aspcms:sorttitle}</h4><span>您现在的位置：<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position} </span>
+			</div>
+			<div class="nr">
+				
+				<div class="nr_text"><style type="text/css">
+<!--
+#gbooklist {
+	width: 98%;
+	text-align:center;
+}
+#gbooklist .faq  ,
+#gbooklist .reply
+{
+	text-align:left;
+	width: 98%;
+	word-wrap: break-word; 
+	word-break: break-all;
+}
+#gbooklist .faq{
+	margin-bottom:15px;
+}
+#gbooklist .faqtit,
+#gbooklist .faqcon
+{
+padding-left:5px;
+}
+
+#gbooklist .faqtit{
+background:#A8DFFA;
+color:#0B3779;
+font-size:14px;
+}
+
+#gbooklist .reply{
+	border: 1px dashed #FF0000;
+	width:95%;
+	margin-bottom:10px;
+	margin-left:5px;
+	padding:3px;
+}
+.pageNavi{border:none;}
+/* CSS Document */
+#faqbox {}
+#faqbox .faqline{ line-height:2em; height:35px; text-align:left}
+#faqbox .faqline .faqtit{  width:100px; display:block; float:left; clear:both; text-align:right}
+#faqbox .Content{ line-height:2em; height:120px; text-align:left}
+#faqbox .Content  .faqtit{  width:70px; display:block; float:left; clear:both; text-align:right}
+#faqbox .Content textarea { height:100px;}
+
+-->
+</style>
+    
+<div id="faqbox">
+<form action="save.asp?action=add" method="post">
+    <div class="faqline">
+        <span class="faqtit">企业名称：</span>
+        <input name="djm" type="text" />
+    </div>    
+    
+   <div class="faqline">
+        <span class="faqtit">代码证编号：</span>
+        <input name="dmz" type="text" />
+    </div>
+   <div class="faqline">
+        <span class="faqtit">公司规模：</span>
+        <input name="gm" type="text" /> 
+    </div>
+	 <div class="faqline">
+        <span class="faqtit">公司行业：</span>
+        <input name="hangye" type="text" /> 
+    </div>
+ 
+  <div class="faqline">
+        <span class="faqtit">验证码：</span>
+        <input name="code" type="text" class="login_verification" id="verification" size="6" maxlength="6"/><font color="#FF0000">*</font>
+        <img src="{aspcms:sitepath}/inc/checkcode.asp" alt="看不清验证码?点击刷新!" onClick="this.src='{aspcms:sitepath}/inc/checkcode.asp'" />
+    </div>
+   <div class="faqline">
+        <span class="faqtit">&nbsp;</span>
+        <input type="submit" value=" 提交 "/>
+    </div>
+</form>
+</div>  </div>
+			</div>
+		</div>
+		<div class="clearboth"></div>
+</div>
+
+{aspcms:foot}
+</body>
+</html>

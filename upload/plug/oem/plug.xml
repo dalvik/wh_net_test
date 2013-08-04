@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gb2312"?>
+<template version="0.1">
+	<ScreenShot>OEM插件</ScreenShot>
+	<description>1.0</description>
+	<powerdby>上谷网络</powerdby>
+	<pagename>OEM</pagename>
+	<pagepath>AspCms_OEM.asp</pagepath>
+	<plugkey>p_oem</plugkey>
+</template>

@@ -1,0 +1,25 @@
+<div class="header">
+    <div class="top1">
+	    <h3>
+		<script src="{aspcms:sitepath}/js/comm.js" type="text/javascript"></script>
+		<img src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/logo.jpg" alt="ASPCMS企业网站建站平台" /></h3>
+		<ul class="top_nav">
+		    <li class="li1"><a href="{aspcms:sitepath}{aspcms:languagepath}">返回首页</a></li>
+			<li class="li2"><A href="#" class=homepage  onclick="setHomepage();">设为主页</A> </li>
+			<li class="li3">{aspcms:type sort=19}<a href="[type:link]">[type:name]</a>{/aspcms:type}</li>
+		</ul>
+		<div class="nav">
+		    <ul>
+             <li><a href="{aspcms:sitepath}{aspcms:languagepath}">公司首页</a></li>
+            {aspcms:navlist}
+			    <li><a href="[navlist:link]">[navlist:name]</a></li>
+                {/aspcms:navlist}
+
+			</ul>
+		</div>
+	</div>
+	<div class="top2">
+{aspcms:slide}
+
+	</div>
+</div>

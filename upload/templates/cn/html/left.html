@@ -1,0 +1,27 @@
+<DIV class=sidebar>
+<UL>
+<LI>
+<H3>{aspcms:sortname}</H3>
+    <UL class=sub>
+{aspcms:navlist type={aspcms:topsortid}}
+  <li {if:[navlist:sortid]=[navlist:cursortid]}class="currentNav"{end if}><a title="[navlist:name]" href="[navlist:link]">[navlist:name]</a></li>
+{/aspcms:navlist}
+    </UL>
+</LI>
+
+
+
+
+<LI>
+    <H3>ĞÂÎÅ¶¯Ì¬</H3>
+    <UL>
+    	{aspcms:content sort=1 num=10 }
+    	<LI><A title="[content:title]" href="[content:link]">[content:title len=16]</A></LI>
+    	{/aspcms:content}
+    </UL>
+</LI>
+<LI class="widget widget_text">
+    <DIV class=textwidget><A href="#"><img src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/contact-us_sidebar.jpg" /></A></DIV>
+</LI>
+</UL>
+</DIV>

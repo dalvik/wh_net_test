@@ -1,0 +1,58 @@
+<style>
+.clistbox 
+{
+	width: 90%;
+	text-align:left;
+	margin-bottom:10px;
+	margin-top:3px;
+}
+.clistbox .line1
+{
+	border-bottom: 1px dashed #999999;
+	text-align:left;
+	padding-left:10px;
+	
+}
+.clistbox .line1 span
+{float:right;
+}
+.clistbox .line2
+{padding:5px;}
+
+</style>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <td align="center" >     
+    <div id="commentlist">评论加载中...</div>
+	<script language="javascript" src="{aspcms:sitepath}/plug/comment/comment.asp?id=[news:id]"></script>
+
+    
+    <form method="post"  action="{aspcms:sitepath}/plug/comment/addComment.asp?action=add">
+    <input type="hidden" name="contentID" value="[news:id]" /> 
+    
+    <table border="0" cellpadding="2" cellspacing="0" align="center">
+        <tr>
+          <td>          
+          内容：</td>
+          <td align="left"><textarea name="CommentContent" cols="" rows="" style="WIDTH:420px; height:80px;"></textarea></td>
+        </tr>
+        <tr>
+          <td>          
+          评论者： </td>
+          <td align="left">
+          <input type="text" name="Commentator"  style="WIDTH: 80px; height:18px;" size=12 maxlength="50" value="匿名网友" /> 
+          验证码：<input type="text" name="code"  style="WIDTH: 60px; height:18px;" size=12 maxlength="4" /> 
+           <a onClick="SeedImg.src='{aspcms:sitepath}/inc/checkcode.asp'"><img src="{aspcms:sitepath}/inc/checkcode.asp" id="SeedImg" align="absmiddle" style="cursor:pointer;" border="0" /></a>           
+          </td>
+        </tr>       
+        <tr>
+            <td height="28"> 
+            &nbsp;&nbsp;</td>
+            <td height="28" align="left"><input type="submit" name="Submit"  value=" 发表 " style="height:22px;" color:#0099ff /></td>
+        </tr>
+    </table>
+      </form> 
+    </td>
+  </tr>
+</table>

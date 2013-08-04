@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="gbk"?>
+<template version="0.1">
+	<ScreenShot>信息采集插件</ScreenShot>
+	<description>1.0</description>
+	<powerdby>上谷网络</powerdby>
+	<pagename>采集规则管理</pagename>
+	<pagepath>AspCms_Collect.asp</pagepath>
+	<plugkey>p_plug</plugkey>
+</template>

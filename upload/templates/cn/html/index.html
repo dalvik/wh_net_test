@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<title>{aspcms:sitetitle}{aspcms:additiontitle}- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="{aspcms:sitekeywords}" >
+<meta name="Description" content="{aspcms:sitedesc}" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<META http-equiv=X-UA-Compatible content=IE=EmulateIE7>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.3790.4807" name=GENERATOR>
+<LINK href="/favicon.ico" rel="shortcut icon">
+<LINK media=screen href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/style.css" type=text/css rel=stylesheet>
+<LINK media=all href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/styles.css" type=text/css rel=stylesheet>
+<LINK media=all href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/pagenavi-css.css" type=text/css rel=stylesheet>
+
+<SCRIPT src="images/l10n.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.form.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/scripts.js" type=text/javascript></SCRIPT>
+<SCRIPT type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li:first").addClass("homepage");
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
+
+	// Bookmark
+	function bookmark(title, url) {
+	  if (document.all)
+		window.external.AddFavorite(url, title);
+	  else if (window.sidebar)
+		window.sidebar.addPanel(title, url, "")
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<DIV class=wrapper>
+    {aspcms:top}   
+    <DIV class=slideshow id=slideshow>
+{aspcms:slideb}
+    </DIV>
+	
+
+	<DIV class=clear></DIV>
+    <DIV class=featured>
+        <DIV class=containerTop></DIV>
+    
+        <DIV class="containerContent homeContent">
+            <DIV class=news>
+                {aspcms:type sort=1}
+                  <H2><SPAN><A title="[type:name]" href="[type:link]">更多&gt;&gt;</A></SPAN><A title="[type:name]" href="[type:link]">[type:name]</A></H2>
+                {/aspcms:type}
+                <UL>
+                {aspcms:content sort=1 num=11 order=order}  
+                    <LI><A title="[content:title]" href="[content:link]" {if:[content:isoutlink]} target="_blank"{end if}><font color="[content:titlecolor]">[[content:sortname]][content:title len=20]</font></A><SPAN>[content:date style=yy-m-d]</SPAN></LI>
+                {/aspcms:content} 
+                </UL>
+            </DIV>
+            <DIV class=products>
+                {aspcms:type sort=5}
+                  <H2><SPAN><A title="[type:name]" href="[type:link]">更多&gt;&gt;</A></SPAN><A title="[type:name]" href="[type:link]">[type:name]</A></H2>
+                {/aspcms:type}
+                <UL>
+                {aspcms:content sort=5 num=4 order=order}  
+                  <LI><A title="[content:title]" href="[content:link]"><IMG class="attachment-small" title="[content:title]" alt="[content:title]" src="[content:pic]" /></A> <A class="product_name" title="[content:title]" href="[content:link]">[content:title]</A></LI>  
+                {/aspcms:content} 
+                </UL>
+              </DIV>
+            <DIV class=profile>
+                {aspcms:type sort=19}
+                  <H2><SPAN><A title="[type:name]" href="[type:link]">更多&gt;&gt;</A></SPAN><A title="[type:name]" href="[type:link]">[type:name]</A>  
+                </H2>
+                {/aspcms:type}
+                <DIV class=about-us>
+                    <DIV>
+                    {aspcms:content sort=105 num=1 order=order}
+                        	<embed type="application/x-mplayer2" width="273" height="173" src="[content:videourl]"></embed>
+                        {/aspcms:content}
+                       	{aspcms:about sort=19 len=105}{aspcms:type sort=19}<a href="[type:link]">[about:info]</a>{/aspcms:type}{/aspcms:about}
+                         <DIV class=clear></DIV>
+                    </DIV>
+                    <DIV class=clear></DIV>
+                </DIV>
+                <DIV class=clear></DIV>
+            </DIV>
+        </DIV>
+    </DIV>
+</DIV>
+<DIV class=clear></DIV>
+{aspcms:foot}
+</BODY>
+</HTML>

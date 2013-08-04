@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{aspcms:sorttitle}-{aspcms:sitetitle}- Powered by AspCms2.0</title>
+<meta name="Keywords" content="{aspcms:sortkeyword}" >
+<meta name="Description" content="{aspcms:sortdesc}" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/public.css" rel="stylesheet" />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/front.css" rel="stylesheet" />
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/jquery1.4.2.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/front.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/productlist_roll.js"></script>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.form.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/scripts.js" type=text/javascript></SCRIPT>
+<SCRIPT type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li:first").addClass("homepage");
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
+
+	// Bookmark
+	function bookmark(title, url) {
+	  if (document.all)
+		window.external.AddFavorite(url, title);
+	  else if (window.sidebar)
+		window.sidebar.addPanel(title, url, "")
+}
+</SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/l10n.js" type=text/javascript></SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/comment-reply.js" type=text/javascript></SCRIPT>
+<style type="text/css">
+
+.oc{min-width:583px}
+.oc_thead{background:url({aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/ocTHead.gif); height:26px; line-height:26px}
+.oc_thead div{background:url({aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/bg.png) no-repeat left -43px;height:26px; width:120px; text-align:center; color:white; font-weight:bold;float:left}
+.oc_content{ border:#cccccc 1px solid; border-top:0px; border-bottom:0px; margin:0px; padding:5px; }
+.oc_content_b{border-bottom:#cccccc 1px solid;}
+.oc_content_h{border-top:#cccccc 1px solid;}
+fieldset p{ text-align:left; margin:0px; padding:3px;}
+img{border:0px}
+
+
+.bank{ list-style:none}
+.banklogo{ border:0px;}
+</style>
+</head>
+
+<body>
+{aspcms:top}
+
+<div class="wrap list_wrap singel_wrap">
+    {aspcms:template src=left.html}
+	
+	<div class="column_m">
+		    <div class="bt">
+			    <h4>{aspcms:sorttitle}</h4><span>您现在的位置：<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position} </span>
+			</div>
+		<div class="oc">
+<div class="oc_thead"><div>订单信息</div></div>
+<div class="oc_content"> 
+<table cellpadding="0" cellspacing="25" border="0" align="center" width="90%">
+  <tr align="center">
+    <td width="50%" align="left">
+	<p>订单号码：{aspcms:order.no}
+  <p>订单日期：{aspcms:order.date}  
+  <p>用 户 名：{aspcms:order.username}
+  <p>订单状态：{aspcms:order.state}
+  <p>订单总金额：{aspcms:order.total}元
+  <p>商品总数量：{aspcms:order.count}
+  <p>订单备注：<br>
+  * 请记住订单号码.<br>
+  * 支付确认后,您将收到一封支付(结算)的电子邮件 
+	</td>
+    <td>
+    
+   <table width="245" cellpadding="0" cellspacing="0">
+<tr>
+<td><fieldset style="width:245px" align="center"> <legend> 订购人信息 </legend>
+<p>客户姓名：{aspcms:order.nicename}</p>
+<p>联系电话：{aspcms:order.tel}</p>
+<p>手机号码：{aspcms:order.cellphone}</p>
+<p>邮政编码：{aspcms:order.zipcode}</p>
+<p>联系地址：{aspcms:order.address}</p>
+<p>电子邮箱：{aspcms:order.email}</p>
+<p>简单留言：{aspcms:order.note}</p>
+</fieldset></td>
+</tr>
+</table>
+</td>
+  </tr>
+</table>
+
+<!--#-->
+</div>
+
+
+<div class="oc_thead"><div>购物信息</div></div>
+<div class="oc_content">
+ {aspcms:selectproduct}
+</div>
+
+
+<div class="oc_thead"><div>账单明细</div></div>
+<div class="oc_content">
+<dl>
+<dd>总 金 额： {aspcms:order.total}元(需支付金额)
+</dl>
+</ul>
+</div>
+
+
+
+<div class="oc_thead"><div>支付方式</div></div>
+<div class="oc_content oc_content_b">
+<p>{aspcms:order.payment}</p>
+<p>{aspcms:order.paymentdesc}</p>
+</div>
+{aspcms:order.$trigger$}
+
+
+
+
+</div>
+		</div>
+		<div class="clearboth"></div>
+</div>
+
+{aspcms:foot}
+</body>
+</html>

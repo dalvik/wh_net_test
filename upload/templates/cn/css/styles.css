@@ -1,0 +1,39 @@
+DIV.wpcf7 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DIV.wpcf7-response-output {
+	PADDING-RIGHT: 1em; PADDING-LEFT: 1em; PADDING-BOTTOM: 0.2em; MARGIN: 2em 0.5em 1em; PADDING-TOP: 0.2em
+}
+DIV.wpcf7-mail-sent-ok {
+	BORDER-RIGHT: #398f14 2px solid; BORDER-TOP: #398f14 2px solid; BORDER-LEFT: #398f14 2px solid; BORDER-BOTTOM: #398f14 2px solid
+}
+DIV.wpcf7-mail-sent-ng {
+	BORDER-RIGHT: #ff0000 2px solid; BORDER-TOP: #ff0000 2px solid; BORDER-LEFT: #ff0000 2px solid; BORDER-BOTTOM: #ff0000 2px solid
+}
+DIV.wpcf7-spam-blocked {
+	BORDER-RIGHT: #ffa500 2px solid; BORDER-TOP: #ffa500 2px solid; BORDER-LEFT: #ffa500 2px solid; BORDER-BOTTOM: #ffa500 2px solid
+}
+DIV.wpcf7-validation-errors {
+	BORDER-RIGHT: #f7e700 2px solid; BORDER-TOP: #f7e700 2px solid; BORDER-LEFT: #f7e700 2px solid; BORDER-BOTTOM: #f7e700 2px solid
+}
+SPAN.wpcf7-form-control-wrap {
+	POSITION: relative
+}
+SPAN.wpcf7-not-valid-tip {
+	BORDER-RIGHT: #ff0000 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #ff0000 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 10pt; Z-INDEX: 100; BACKGROUND: #fff; LEFT: 20%; PADDING-BOTTOM: 2px; BORDER-LEFT: #ff0000 1px solid; WIDTH: 280px; PADDING-TOP: 2px; BORDER-BOTTOM: #ff0000 1px solid; POSITION: absolute; TOP: 20%
+}
+SPAN.wpcf7-not-valid-tip-no-ajax {
+	DISPLAY: block; FONT-SIZE: 10pt; COLOR: #f00
+}
+SPAN.wpcf7-list-item {
+	MARGIN-LEFT: 0.5em
+}
+.wpcf7-display-none {
+	DISPLAY: none
+}
+DIV.wpcf7 IMG.ajax-loader {
+	MARGIN-LEFT: 4px; VERTICAL-ALIGN: middle; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+DIV.wpcf7 .watermark {
+	COLOR: #888
+}

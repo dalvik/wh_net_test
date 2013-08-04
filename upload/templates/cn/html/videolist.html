@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<title>{aspcms:sorttitle}-{aspcms:sitetitle}- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="{aspcms:sortkeyword}" >
+<meta name="Description" content="{aspcms:sortdesc}" >
+<META http-equiv=X-UA-Compatible content=IE=EmulateIE7>
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.3790.4807" name=GENERATOR>
+<LINK media=screen href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/style.css" type=text/css rel=stylesheet>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/jquery.js" type=text/javascript></SCRIPT>
+<LINK media=screen href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/style.css" type=text/css rel=stylesheet>
+<LINK media=all href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/styles.css" type=text/css rel=stylesheet>
+<LINK media=all href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/pagenavi-css.css" type=text/css rel=stylesheet>
+
+<SCRIPT type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li:first").addClass("homepage");
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
+
+	// Bookmark
+	function bookmark(title, url) {
+	  if (document.all)
+		window.external.AddFavorite(url, title);
+	  else if (window.sidebar)
+		window.sidebar.addPanel(title, url, "")
+}
+</SCRIPT>
+<SCRIPT src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/l10n.js" type=text/javascript></SCRIPT>
+
+</HEAD>
+
+<BODY>
+<DIV class=wrapper>
+    {aspcms:top}
+    <DIV class=banner><img src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/video.jpg"></DIV>
+    <DIV class=container>
+        <DIV class=containerTop></DIV>
+        <DIV class=containerContent>
+            <DIV class=content>
+                <DIV class=breadcrumb>当前位置:<a href="{aspcms:sitepath}{aspcms:languagepath}">首页</a>{aspcms:position} &gt; [position:link]{/aspcms:position}</DIV>
+                <DIV class=posts>
+                
+                    <UL class=productlist>
+                        {aspcms:list size=9 order=order} 
+                        <li>
+                            <a href="[list:link]" title="[list:title]" ><img class="attachment-small" src="[list:pic]"  title="[list:title]"  alt="[list:title]"  /></a>
+                            <A href="[list:link]" title="[list:title]" class="product_name">[list:title len=50]</A>  
+                        </li>                        
+                        {/aspcms:list}   
+                    </UL>
+                    <DIV class=clear></DIV>
+                    <DIV class=pageNavi><DIV class=wp-pagenavi>[list:pagenumber len=5]</DIV></DIV>
+                </DIV>
+            </DIV>
+            {aspcms:template src=left.html}
+        </DIV>
+    </DIV>
+</DIV>
+<DIV class=clear></DIV>
+{aspcms:foot}
+</BODY>
+</HTML>

@@ -1,0 +1,74 @@
+/* CSS Document */
+
+#qq_Kefu {
+    font-size: 12px;
+}
+#qq_Kefu ul, li {
+    margin: 0;
+    padding: 0;
+}
+#qq_Kefu table {
+    border-collapse: collapse;
+    border-style: none;
+}
+#qq_Kefu td {
+    padding: 0;
+    border: 0;
+    font-size: 12px;
+    line-height: 1.5em;
+}
+.Kefu_Little {
+    width: 27px;
+    height: 266px;
+    cursor: pointer;
+    display: block;
+}
+.Kefu_Phone {
+    background: url(Phone.png) no-repeat;
+    margin: 33px 0 0 15px;
+    padding-left: 30px;
+    line-height: 14px;
+}
+.Kefu_Info {
+    padding: 10px 0 0 15px;
+    line-height: 2;
+}
+.Kefu_Info ul li {
+    padding-left: 27px;
+}
+.Kefu_Url {
+    background: url(service.gif) no-repeat 3px 3px;
+}
+.Kefu_Help {
+    background: url(help.gif) no-repeat 3px 3px;
+}
+.Kefu_QQ {
+    background: url(qq_online.gif) no-repeat 0 3px;
+}
+.Kefu_Work {
+    text-align: center;
+}
+.Kefu_Info li {
+    list-style-type: none;
+}
+#qq_Kefu .kfbut{
+	background-image: url(Kf_bg02.gif);
+	background-repeat: no-repeat;
+ }
+#qq_Kefu .kfbg{
+margin-left:10px;
+
+}
+
+#qq_Kefu .kefu_box {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 2px; MARGIN: 0px 3px; WIDTH: 106px; CURSOR: pointer; PADDING-TOP: 4px; HEIGHT: 20px
+}
+#qq_Kefu .kefu_boxOver {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 2px; MARGIN: 0px 3px; WIDTH: 106px; CURSOR: pointer; PADDING-TOP: 4px; HEIGHT: 20px
+}
+#qq_Kefu .kefu_box {
+	BORDER-TOP: #fff 1px solid; BACKGROUND: #fff; BORDER-BOTTOM: #fff 1px solid
+}
+#qq_Kefu .kefu_boxOver {
+	BORDER-TOP: #a3e7fc 1px solid; BACKGROUND: #e1f7fd; BORDER-BOTTOM: #a3e7fc 1px solid
+}

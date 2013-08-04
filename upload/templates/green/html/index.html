@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{aspcms:sitetitle}{aspcms:additiontitle}- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="{aspcms:sitekeywords}" >
+<meta name="Description" content="{aspcms:sitedesc}" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/public.css" rel="stylesheet" />
+<link type="text/css" href="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/css/front.css" rel="stylesheet" />
+
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/jquery1.4.2.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/front.js"></script>
+<script type="text/javascript" src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/js/productlist_roll.js"></script>
+</head>
+
+<body>
+{aspcms:top}
+  
+<div class="wrap">
+    <div class="column_l">
+	    <div class="login">
+		    <h4>邮箱登陆</h4>
+			<script language="javascript" src="{aspcms:sitepath}{aspcms:languagepath}member/userLogin.asp"></script>
+		</div>
+	    <p class="kfzx"><a href="http://fuwu.4i.com.cn/forum.php" title="客服中心" target="_blank">客服中心</a></p>
+		<p class="message">{aspcms:type sort=18}<a href="[type:link]" title="[type:name]">[type:name]</a>{/aspcms:type}</p>
+		<p class="fwrx"><font class="fwrxfont">{aspcms:companyphone}<br/>{aspcms:companymobile}</font></p>
+	</div>
+	
+	<div class="column_m">
+	    <div class="news">
+		    <div class="bt">
+			    <h4>新闻资讯</h4>
+			</div>
+			<div class="nr">
+			    <p><img src="{aspcms:sitepath}/Templates/{aspcms:defaulttemplate}/images/1283493673.jpg" alt="" /></p>
+				<ul>
+				   {aspcms:content sort=1 num=4 order=id}  
+                    <li><a href="[content:link]">[content:title len=28]</a><span>[content:date style=y-m-d]</span></li>
+                    {/aspcms:content} 
+			
+				</ul>
+			</div>
+			<div class="clearboth"></div>
+		</div>
+		
+		<div class="search">
+		<form class="clearfix" action="{aspcms:sitepath}{aspcms:languagepath}search.asp" method="get">
+		    <ul>
+			    <li>关键字：</li>
+			    <li><span><input type="text"  name="keys"  /></span></li>
+			
+				
+				<li class="btn"><input type="submit"  value=""/></li>
+			</ul>
+		</form>
+		</div>
+		
+		<div class="product_scroll clearfix">
+		<div class="product_scroll_inner" id="product_scroll">
+        
+
+            {aspcms:content sort=5 num=8 order=order}
+			<ul>
+			    <li class="pic"><a href="[content:link]"><img src="[content:pic]" alt="" /></a></li>
+				<li class="text"><a href="[content:link]">[content:title len=10]</a></li>
+			</ul>
+            {/aspcms:content} 
+			
+		</div>
+		<div class="clearboth"></div>
+		<span class="btn_l" id="btn_l"></span>
+		<span class="btn_r" id="btn_r"></span>
+		</div>
+<script>
+<!--//--><![CDATA[//><!--
+var scrollPic_03 = new ScrollPic();
+scrollPic_03.scrollContId   = "product_scroll"; //内容容器ID
+scrollPic_03.arrLeftId      = "btn_l";//左箭头ID
+scrollPic_03.arrRightId     = "btn_r"; //右箭头ID
+
+scrollPic_03.frameWidth     = 474;//显示框宽度
+scrollPic_03.pageWidth      = 158; //翻页宽度
+
+scrollPic_03.speed          = 10; //移动速度(单位毫秒，越小越快)
+scrollPic_03.space          = 10; //每次移动像素(单位px，越大越快)
+scrollPic_03.autoPlay       = true; //自动播放
+scrollPic_03.autoPlayTime   = 3; //自动播放间隔时间(秒)
+
+scrollPic_03.initialize(); //初始化
+							
+		//--><!]]>
+</script>
+	</div>
+	
+	<div class="column_r">
+	    <div class="company">
+		     <div class="bt">
+			    <h4>公司简介</h4>
+			</div>
+			<div class="nr">{aspcms:about sort=19 len=60}
+			    <div class="pic">
+                <img src="[about:pic]" width="225" height="85" /></div>
+				<div class="text">[about:info]{/aspcms:about}<br />
+<script src="{aspcms:sitepath}/plug/vote/index.asp" language="JavaScript"></script></div>
+			</div>   
+		</div>
+	</div>
+	
+	<div class="clearboth"></div>
+	
+	<div class="friendlink">
+	    <div class="bt">
+		    友情链接
+		</div>
+		<div class="nr">
+		    {aspcms:linklist  type=font}<a href="[linklist:link]">[linklist:name]</a> {/aspcms:linklist}  
+              
+		</div>
+		<div class="clearboth"></div>
+	</div>
+</div>
+
+{aspcms:foot}
+</body>
+</html>
